@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-class GitDriver 
+class GitDriver
   def checkout( repositoryPath, temporaryPath, redmineProjectName, sphinxMakefilehead, revision, username, password)
     dirPath = "#{esc temporaryPath}/#{esc redmineProjectName}"
-    dirRevPath = "#{dirPath}/#{esc revision}" 
+    dirRevPath = "#{dirPath}/#{esc revision}"
     dirHeadPath = "#{dirPath}/head"
 
     #git cloneを行って、head取得
@@ -15,7 +15,7 @@ class GitDriver
     #git revision copyを行う
     system("cp","-rf", dirHeadPath, dirRevPath)
     #git checkoutを行う
-    checkoutCommand = "cd #{dirRevPath}" + ";" + "git checkout #{esc revision}" 
+    checkoutCommand = "cd #{dirRevPath}" + ";" + "git checkout #{esc revision}"
     system(checkoutCommand)
   end
 
