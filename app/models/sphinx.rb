@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
-class Sphinx 
+class Sphinx < ActiveRecord::Base
+  unloadable
+  include Redmine::SafeAttributes
+  belongs_to :project
 
   require 'shellwords'
 
@@ -53,7 +56,7 @@ class Sphinx
     password = repository.password
 
     case repository.scm
-    when Redmine::Scm::Adapters::GitAdapter 
+    when Redmine::Scm::Adapters::GitAdapter
       driver = GitDriver.new
     when Redmine::Scm::Adapters::SubversionAdapter
       driver = SubversionDriver.new
@@ -68,9 +71,9 @@ class Sphinx
 
   #find sphinx makefile
   def self.search_makefile(path, sphinxMakefileHead)
-    if FileTest.directory?( path ) 
+    if FileTest.directory?( path )
       Dir.glob("#{path}/**/Makefile").each do |filepath|
-        found = /^#{sphinxMakefileHead}/ =~ File.read(filepath) 
+        found = /^#{sphinxMakefileHead}/ =~ File.read(filepath)
         if found
           return filepath
         end
@@ -86,7 +89,7 @@ class Sphinx
 
   #get sphinx document and compile it
   def self.checkout_and_compile( driver, repositoryPath, temporaryPath, redmineProjectName, sphinxMakefileHead, revision, username, password )
-    dirRevPath = "#{esc temporaryPath}/#{esc redmineProjectName}/#{esc revision}" 
+    dirRevPath = "#{esc temporaryPath}/#{esc redmineProjectName}/#{esc revision}"
     if File.exists?(dirRevPath)
       return
     end
