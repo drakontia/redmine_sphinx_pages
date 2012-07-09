@@ -16,6 +16,6 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 RedmineApp::Application.routes.draw do
-  match 'projects/:id/sphinx_pages/:action', :controller => 'code_review', :via => [:get, :post]
-  match 'projects/:id/sphinx_pages_settings/:action', :controller => 'code_review_settings', :via => [:get, :post, :put]
+  match 'projects/:id/sphinx_pages/:action', :controller => 'shpinx_pages', :via => [:get, :post]
+  match 'projects/:id/sphinx_pages_settings/:action', :controller => 'sphinx_pages_settings', :via => [:get, :post, :put]
 end
