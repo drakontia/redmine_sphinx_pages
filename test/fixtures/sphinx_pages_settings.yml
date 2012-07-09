@@ -1,0 +1,43 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+
+  document_root_path: MyString
+
+  sphinx_path: MyString
+
+  server_port: 1
+
+  sphinx_makefile_head: MyText
+
+  build_dir_variable_name: MyString
+
+  sphinx_index_page: MyString
+
+  pages_title: MyString
+
+  repository: MyString
+
+  branch: MyString
+
+two:
+  id: 2
+
+  document_root_path: MyString
+
+  sphinx_path: MyString
+
+  server_port: 1
+
+  sphinx_makefile_head: MyText
+
+  build_dir_variable_name: MyString
+
+  sphinx_index_page: MyString
+
+  pages_title: MyString
+
+  repository: MyString
+
+  branch: MyString
+

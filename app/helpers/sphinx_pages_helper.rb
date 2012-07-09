@@ -1,0 +1,2 @@
+module SphinxPagesHelper
+end
