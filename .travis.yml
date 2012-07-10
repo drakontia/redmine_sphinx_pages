@@ -21,6 +21,7 @@ install: "echo skip bundle install"
 
 script:
   - export TESTSPACE=`pwd`/testspace
+#- export NAME_OF_PLUGIN=sphinx_pages
   - export PATH_TO_PLUGIN=`pwd`
   - export PATH_TO_REDMINE=$TESTSPACE/redmine
   - export PATH_TO_TESTER=`pwd`/redmine_tester.sh

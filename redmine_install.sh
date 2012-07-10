@@ -2,15 +2,20 @@
 
 if [[ ! "$TESTSPACE" = /* ]] ||
    [[ ! "$PATH_TO_REDMINE" = /* ]] ||
+   [[ ! "$PATH_TO_TESTER" = /* ]] ||
+   [[ ! "$NAME_OF_PLUGIN" = /* ]] ||
    [[ ! "$PATH_TO_PLUGIN" = /* ]];
 then
   echo "You should set"\
-       " TESTSPACE, PATH_TO_REDMINE, PATH_TO_PLUGIN"\
+       " TESTSPACE, PATH_TO_REDMINE, PATH_TO_TESTER"\
+       " NAME_OF_PLUGIN, PATH_TO_PLUGIN"\
        " environment variables"
   echo "You set:"\
-       "$TESTSPACE"\
-       "$PATH_TO_REDMINE"\
-       "$PATH_TO_PLUGIN"
+       "TESTSPACE:      $TESTSPACE"\
+       "PATH_TO_REDMINE:$PATH_TO_REDMINE"\
+       "PATH_TO_TESTER: $PATH_TO_PLUGIN"
+       "NAME_OF_PLUGIN: $NAME_OF_PLUGIN"
+       "PATH_TO_PLUGIN: $PATH_TO_PLUGIN"
   exit 1;
 fi
 
