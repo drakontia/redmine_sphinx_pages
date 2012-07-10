@@ -24,13 +24,13 @@ case $REDMINE_VER in
       export GENERATE_SECRET=generate_session_store
       export MIGRATE_PLUGINS=db:migrate_plugins
       export REDMINE_GIT_REPO=git://github.com/edavis10/redmine.git
-      export REDMINE_GIT_TAG=1.4.2
+      export REDMINE_GIT_TAG=1.4-stable
       ;;
   2)  export PATH_TO_INSTALL=./plugins # for redmine 2.0
       export GENERATE_SECRET=generate_secret_token
       export MIGRATE_PLUGINS=redmine:plugins:migrate
       export REDMINE_GIT_REPO=git://github.com/edavis10/redmine.git
-      export REDMINE_GIT_TAG=master
+      export REDMINE_GIT_TAG=2.0.3
       ;;
   cp) export PATH_TO_INSTALL=./vendor/plugins
       export GENERATE_SECRET=generate_session_store
