@@ -82,6 +82,9 @@ echo current directory is `pwd`
 # create a link to the backlogs plugin
 ln -sf $PATH_TO_PLUGIN $PATH_TO_INSTALL/$NAME_OF_PLUGIN
 
+# copy Gemfile.local for development & test
+cp $TESTSPACE/Gemfile.local .
+
 # install gems
 mkdir -p vendor/bundle
 bundle install --path vendor/bundle

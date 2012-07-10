@@ -1,8 +1,8 @@
 development:
-  adapter: mysql2
-  database: db/redmine_development
+  adapter: sqlite3
+  database: db/redmine_development.sqlite3
 
 test:
-  adapter: mysql2
-  database: db/redmine_development
+  adapter: sqlite3
+  database: db/redmine_development.sqlite3
 
