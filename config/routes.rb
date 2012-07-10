@@ -14,8 +14,16 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
+if Rails::VERSION::MAJOR < 3
+ActionController::Routing::Routes.draw do |map|
+  map.connect 'projects/:id/sphinx_pages/:action', :controller => 'sphinx_pages', :conditions => {:method => [:get, :post]}
+  map.connect 'projects/:id/settings/sphinx_pages/:action', :controller => 'sphinx_pages_settings', :conditions => {:method => [:get, :post, :put]}
 
+end
+else
 RedmineApp::Application.routes.draw do
-  match 'projects/:id/sphinx_pages/:action', :controller => 'shpinx_pages', :via => [:get, :post]
-  match 'projects/:id/sphinx_pages_settings/:action', :controller => 'sphinx_pages_settings', :via => [:get, :post, :put]
+  match 'projects/:id/sphinx_pages/:action', :controller => 'sphinx_pages', :via => [:get, :post]
+  match 'projects/:id/settings/sphinx_pages/:action', :controller => 'sphinx_pages_settings', :via => [:get, :post, :put]
+end
 end
