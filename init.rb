@@ -7,7 +7,6 @@ Redmine::Plugin.register :redmine_sphinx_pages do
   author_url 'http://twitter.com/drakontia'
   description 'This is a plugin for Redmine'
   version '0.0.2'
-  requires_redmine :version_or_higher => '2.0.0'
 
   # sphinx用のメニュー追加
   project_module :sphinx_pages do

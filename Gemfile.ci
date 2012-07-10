@@ -49,4 +49,6 @@ group :development do
   gem "timecop"
   gem "octokit"
   gem "inifile"
+	gem "ramaze"
+	gem "webrat"
 end
