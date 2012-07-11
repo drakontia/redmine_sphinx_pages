@@ -4,7 +4,7 @@ Feature: Sidebar, which requires javascript to show
   So that i can quickly navigate to relevant views
 
   Background:
-    Given the ecookbook project has the backlogs plugin enabled
+    Given the ecookbook project has the sphinx_pages plugin enabled
       And I am a team member of the project
       And I have defined the following sprints:
         | name       | sprint_start_date | effective_date |

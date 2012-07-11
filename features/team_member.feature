@@ -1,19 +1,19 @@
-Feature: Team Member
-  As a team member
-  I want to manage update stories and tasks
+Feature: Author
+  As a author
+  I want to publish documentation by sphinx
   So that I can update everyone on the status of the project
 
   Background:
-    Given the ecookbook project has the backlogs plugin enabled
-      And I am a team member of the project
-      And I have deleted all existing issues
+    Given the ecookbook project has the sphinx_pages plugin enabled
+      And I am a developer of the project
+      And I have deleted all existing repositories
       And I have defined the following repositories:
         | name           | sprint_start_date | effective_date |
         | Repository 001 | 2010-01-01        | 2010-01-31     |
         | Repository 002 | 2010-02-01        | 2010-02-28     |
         | Repository 003 | 2010-03-01        | 2010-03-31     |
       And I have defined the following branches in the following repositories:
-        | subject | sprint     |
+        | subject | repository |
         | Story 1 | Sprint 001 |
         | Story 2 | Sprint 001 |
         | Story 3 | Sprint 001 |
