@@ -7,12 +7,12 @@ Feature: Common
     Given the ecookbook project has the sphixn_pages plugin enabled
       And I am a team member of the project
 
-  Scenario: View the product backlog
-    Given I am viewing the master backlog
-     When I request the server_variables resource
+  Scenario: View the sphinx_pages
+    Given I am viewing the sphinx_pages
+     When I request the repository list
      Then the request should complete successfully
 
-  Scenario: View the product backlog without any stories
-    Given there are no stories in the project
-     When I view the master backlog
+  Scenario: View the sphinx_pages without any repositories
+    Given there are no repositoriesin the project
+     When I view the sphinx_pages
      Then the request should complete successfully
