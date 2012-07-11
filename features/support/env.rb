@@ -21,7 +21,7 @@ Spork.prefork do
   require 'cucumber/rails/world'
   require 'cucumber/rails/active_record'
   require 'cucumber/web/tableish'
-
+  require 'factory_firl/step_definitions'
 
   require 'capybara/rails'
   require 'capybara/cucumber'
