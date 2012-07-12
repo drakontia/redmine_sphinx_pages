@@ -19,4 +19,13 @@ Redmine::Plugin.register :redmine_sphinx_pages do
     setting = SphinxPagesProjectSetting.find_or_create(project)
     project.repository != nil and setting adn !setting.hide_sphinx_pages_tab
   }, :after => :repository, :param => :project_id
+
+  settings :default => {
+    'document_root_path' => '/var/www/',
+    'html_dir' => 'sphinx_pages',
+    'server_port' => '80',
+    'makefile_head' => '# Makefile for Sphinx documentation',
+    'build_dir' => 'BUILDDIR'
+  }, :partial => 'sphinx_pages/settings'
+
 end

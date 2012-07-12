@@ -1,0 +1,48 @@
+<%- content_for :header_tags do %>
+  <style>
+    table { border-collapse: collapse; }
+    td, th { padding-left: 1em; padding-right: 1em; text-align: left; vertical-align: top; border: 1px solid black; }
+    th { font-weight: bold; }
+    td.unfit { text-decoration: line-through; }
+    td.selected { font-weight: bold; }
+    td.ok { background-color:#00FF00 }
+    td.error { background-color:#FF0000 }
+  </style>
+<%- end %>
+
+<script type="text/javascript">
+</script>
+
+<h2>Sphinx Pages version <%= SphinxPages.version %></h2>
+<% if !SphinxPages.configured? %>
+  <fieldset>
+    <legend>SphinxPages was not properly set up</legend>
+    <%- if !SphinxPages.migrated? %>
+      <p>Plugin migrations have not been executed</p>
+    <%- end %>
+  </fieldset>
+<% end %>
+<p>
+  <%= content_tag(:label, l(:sx_document_root_path)) %>
+  <%= text_field_tag("settings[document_root_path]", SphinxPages.setting[:document_root_path]) %>
+</p>
+
+<p>
+  <%= content_tag(:label, l(:sx_html_dir)) %>
+  <%= text_field_tag("settings[html_dir]", SphinxPages.setting[:html_dir]) %>
+</p>
+
+<p>
+  <%= content_tag(:label, l(:sx_server_port)) %>
+  <%= text_field_tag("settings[server_port]", SphinxPages.setting[:server_port]) %>
+</p>
+
+<p>
+  <%= content_tag(:label, l(:sx_makefile_head)) %>
+  <%= text_field_tag("settings[makefile_head]", SphinxPages.setting[:makefile_head]) %>
+</p>
+
+<p>
+  <%= content_tag(:label, l(:sx_build_dir)) %>
+  <%= text_field_tag("settings[build_dir]", SphinxPages.setting[:build_dir]) %>
+</p>
