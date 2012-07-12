@@ -1,5 +1,3 @@
-source :rubygems
-
 chiliproject_file = File.dirname(__FILE__) + "/lib/chili_project.rb"
 chiliproject = File.file?(chiliproject_file)
 
@@ -35,18 +33,18 @@ group :development do
   if RAILS_VERSION_IS_3
     gem "rspec", "=2.5.0"
     gem "rspec-rails", "=2.5.0"
-    gem "factory_girl"
-    gem "factory_girl_rails"
   else
     gem "rspec", "=1.3.1"
     gem "rspec-rails", "=1.3.3"
-    gem "factory_girl", "~>2"
-    gem "factory_girl_rails", "=1.7.0"
   end
   if RUBY_VERSION >= "1.9"
     gem "simplecov", "~>0.6"
+    gem "factory_girl"
+    gem "factory_girl_rails"
   else
     gem "rcov",  "=0.9.11"
+    gem "factory_girl", "~>2"
+    gem "factory_girl_rails", "=1.7.0"
   end
   gem "spork"
   gem "test-unit", "=1.2.3" if RUBY_VERSION >= "1.9"
