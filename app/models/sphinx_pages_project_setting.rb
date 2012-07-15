@@ -8,8 +8,6 @@ class SphinxPagesProjectSetting < Settingslogic
 
   validates_presence_of :project_id
 
-  before_save :set_assignment_settings
-
   def self.find_or_create(project)
     setting = SphinxPagesProjectSetting.find(:first, :conditions => ['project_id = ?',  project.id])
     unless setting
